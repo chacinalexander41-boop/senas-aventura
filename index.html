@@ -1,0 +1,1932 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Señas Aventura</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+<div id="app">
+
+    <svg
+        class="illustration-sprite"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+    >
+        <symbol id="illustration-alphabet" viewBox="0 0 128 128">
+            <rect x="20" y="12" width="88" height="104" rx="14" fill="#dbeafe"/>
+            <path d="M37 28h54v72H37z" fill="#fff" stroke="#3b82f6" stroke-width="5"/>
+            <path d="M48 51l9-15 9 15m-15-5h12m4 5 9-15 9 15m-15-5h12M49 78h30M49 89h20" fill="none" stroke="#4338ca" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+        </symbol>
+        <symbol id="illustration-numbers" viewBox="0 0 128 128">
+            <rect x="12" y="12" width="104" height="104" rx="26" fill="#ede9fe"/>
+            <path d="M39 48l15-12v57M69 44c3-7 10-10 17-8 9 2 12 13 5 20l-23 27h27" fill="none" stroke="#6d28d9" stroke-linecap="round" stroke-linejoin="round" stroke-width="9"/>
+            <circle cx="37" cy="99" r="4" fill="#f59e0b"/><circle cx="91" cy="99" r="4" fill="#f59e0b"/>
+        </symbol>
+        <symbol id="illustration-colors" viewBox="0 0 128 128">
+            <path d="M64 13a51 51 0 1 0 0 102h10a13 13 0 0 0 8-23c-5-4-2-12 5-12h6A23 23 0 0 0 116 57C112 32 91 13 64 13z" fill="#fef3c7" stroke="#f59e0b" stroke-width="5"/>
+            <circle cx="42" cy="48" r="8" fill="#ef4444"/><circle cx="65" cy="37" r="8" fill="#3b82f6"/><circle cx="87" cy="49" r="8" fill="#22c55e"/><circle cx="41" cy="72" r="8" fill="#a855f7"/><circle cx="64" cy="83" r="8" fill="#f97316"/>
+        </symbol>
+        <symbol id="illustration-animals" viewBox="0 0 128 128">
+            <path d="M31 49 24 23l29 14a43 43 0 0 1 22 0l29-14-7 27a43 43 0 1 1-66-1z" fill="#fbbf77" stroke="#9a4f24" stroke-linejoin="round" stroke-width="5"/>
+            <path d="M39 55 31 37l19 9m39 9 8-18-19 9" fill="#fca5a5"/>
+            <ellipse cx="49" cy="66" rx="4" ry="6" fill="#1e293b"/><ellipse cx="79" cy="66" rx="4" ry="6" fill="#1e293b"/>
+            <ellipse cx="64" cy="82" rx="13" ry="10" fill="#fff"/><path d="M59 79q5-7 10 0-5 7-10 0m5 5v8m0 0q-8 8-14 0m14 0q8 8 14 0" fill="none" stroke="#9a4f24" stroke-linecap="round" stroke-width="4"/>
+        </symbol>
+        <symbol id="illustration-family" viewBox="0 0 128 128">
+            <circle cx="64" cy="36" r="18" fill="#fbbf77"/><circle cx="31" cy="51" r="14" fill="#fca5a5"/><circle cx="97" cy="51" r="14" fill="#93c5fd"/>
+            <path d="M34 110V91a30 30 0 0 1 60 0v19M8 105V88a23 23 0 0 1 28-22m84 39V88a23 23 0 0 0-28-22" fill="#a78bfa" stroke="#6d28d9" stroke-linecap="round" stroke-width="7"/>
+        </symbol>
+        <symbol id="illustration-food" viewBox="0 0 128 128">
+            <path d="M67 39c-7-11-3-21 7-27 4 12 0 20-7 27z" fill="#22c55e" stroke="#15803d" stroke-width="4"/>
+            <path d="M61 42c-21-19-48-4-45 25 3 28 24 48 44 45 21 3 42-17 45-45 3-29-24-44-44-25z" fill="#ef4444" stroke="#b91c1c" stroke-width="5"/>
+            <path d="M64 42v65" stroke="#b91c1c" stroke-width="4"/><path d="M34 57q8-10 16-2m31 0q8-8 16 2" fill="none" stroke="#fca5a5" stroke-linecap="round" stroke-width="5"/>
+        </symbol>
+        <symbol id="illustration-school" viewBox="0 0 128 128">
+            <path d="M16 39 64 15l48 24v72H16z" fill="#dbeafe" stroke="#2563eb" stroke-linejoin="round" stroke-width="5"/>
+            <path d="M64 16v95M24 49h32v54H24zm48 0h32v54H72z" fill="#fff" stroke="#3b82f6" stroke-width="4"/>
+            <path d="M31 61h17m-17 11h17m32-11h17m-17 11h17" stroke="#60a5fa" stroke-linecap="round" stroke-width="4"/>
+        </symbol>
+        <symbol id="illustration-home" viewBox="0 0 128 128">
+            <path d="m13 61 51-43 51 43v51H13z" fill="#fde68a" stroke="#d97706" stroke-linejoin="round" stroke-width="6"/>
+            <path d="M51 112V76a13 13 0 0 1 26 0v36M26 69h18v18H26zm58 0h18v18H84z" fill="#fff" stroke="#b45309" stroke-width="4"/>
+        </symbol>
+        <symbol id="illustration-actions" viewBox="0 0 128 128">
+            <circle cx="81" cy="25" r="14" fill="#fbbf77"/>
+            <path d="m67 46 20-5 12 18-21 13-13-8-17 18-20-4m33-27L48 83l-5 29m32-42 17 20 20 13m-45-37-22-9-15 12" fill="none" stroke="#7c3aed" stroke-linecap="round" stroke-linejoin="round" stroke-width="9"/>
+            <path d="M18 37h22m-29 17h17" stroke="#f59e0b" stroke-linecap="round" stroke-width="5"/>
+        </symbol>
+        <symbol id="illustration-phrases" viewBox="0 0 128 128">
+            <path d="M13 25a13 13 0 0 1 13-13h56a13 13 0 0 1 13 13v36a13 13 0 0 1-13 13H48L28 91V74a15 15 0 0 1-15-13z" fill="#bfdbfe" stroke="#2563eb" stroke-width="5"/>
+            <path d="M45 70h50a13 13 0 0 1 13 13v15a13 13 0 0 1-13 13H82l-18 13v-13h-6" fill="#ddd6fe" stroke="#7c3aed" stroke-linejoin="round" stroke-width="5"/>
+            <circle cx="39" cy="43" r="4" fill="#1d4ed8"/><circle cx="54" cy="43" r="4" fill="#1d4ed8"/><circle cx="69" cy="43" r="4" fill="#1d4ed8"/>
+            <path d="M73 88h22m-22 11h14" stroke="#6d28d9" stroke-linecap="round" stroke-width="4"/>
+        </symbol>
+        <symbol id="illustration-comprehension" viewBox="0 0 128 128">
+            <path d="M64 20a24 24 0 0 0-40 18 23 23 0 0 0-8 37 25 25 0 0 0 21 39h27zM64 20a24 24 0 0 1 40 18 23 23 0 0 1 8 37 25 25 0 0 1-21 39H64z" fill="#f0abfc" stroke="#a21caf" stroke-width="5"/>
+            <path d="M40 43q18 5 7 20t14 17m27-37q-18 5-7 20t-14 17M37 91q12-10 27 1m27-1q-12-10-27 1" fill="none" stroke="#c026d3" stroke-linecap="round" stroke-width="5"/>
+        </symbol>
+        <symbol id="illustration-master" viewBox="0 0 128 128">
+            <path d="M30 20h68v24a34 34 0 0 1-68 0z" fill="#fbbf24" stroke="#b45309" stroke-width="5"/>
+            <path d="M30 29H14v12a24 24 0 0 0 25 24m59-36h16v12a24 24 0 0 1-25 24M64 78v21m-22 13h44M52 99h24v13H52z" fill="#fde68a" stroke="#b45309" stroke-linejoin="round" stroke-width="5"/>
+            <path d="m64 27 5 10 11 2-8 8 2 11-10-5-10 5 2-11-8-8 11-2z" fill="#fff7ed"/>
+        </symbol>
+    </svg>
+
+    <!-- =====================================================
+         PANTALLA DE BIENVENIDA
+    ====================================================== -->
+
+    <section
+        id="welcomeScreen"
+        class="screen active"
+    >
+
+        <div class="welcome-container">
+
+            <div class="logo">
+                🤟
+            </div>
+
+            <h1>
+                Señas Aventura
+            </h1>
+
+            <p class="subtitle">
+                Aprende lengua de señas jugando
+            </p>
+
+            <p class="welcome-text">
+
+                Aprende nuevas palabras,
+                supera desafíos,
+                consigue puntos y
+                avanza desde principiante
+                hasta avanzado.
+
+            </p>
+
+            <button
+                class="main-button"
+                onclick="showScreen('loginScreen')"
+            >
+                INICIAR SESIÓN
+            </button>
+
+            <button
+                class="secondary-button"
+                onclick="showScreen('registerScreen')"
+            >
+                CREAR CUENTA
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         LOGIN
+    ====================================================== -->
+
+    <section
+        id="loginScreen"
+        class="screen"
+    >
+
+        <div class="form-container">
+
+            <div class="form-icon">
+                🔐
+            </div>
+
+            <h2>
+                Iniciar sesión
+            </h2>
+
+            <p>
+                Entra a tu aventura
+            </p>
+
+            <form id="loginForm">
+
+                <label>
+                    Usuario
+                </label>
+
+                <input
+                    type="text"
+                    id="loginUsername"
+                    placeholder="Tu usuario"
+                    required
+                >
+
+                <label>
+                    Contraseña
+                </label>
+
+                <input
+                    type="password"
+                    id="loginPassword"
+                    placeholder="Tu contraseña"
+                    required
+                >
+
+                <button
+                    type="submit"
+                    class="main-button"
+                >
+                    ENTRAR
+                </button>
+
+            </form>
+
+            <button
+                class="text-button"
+                onclick="showScreen('registerScreen')"
+            >
+                Crear una cuenta
+            </button>
+
+            <button
+                class="back-button"
+                onclick="showScreen('welcomeScreen')"
+            >
+                ← Volver
+            </button>
+
+            <div
+                id="loginMessage"
+                class="message"
+            ></div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         REGISTRO
+    ====================================================== -->
+
+    <section
+        id="registerScreen"
+        class="screen"
+    >
+
+        <div class="form-container">
+
+            <div class="form-icon">
+                🧑‍🎓
+            </div>
+
+            <h2>
+                Crear jugador
+            </h2>
+
+            <p>
+                Construye tu perfil
+            </p>
+
+            <form id="registerForm">
+
+                <label>
+                    Nombre de usuario
+                </label>
+
+                <input
+                    type="text"
+                    id="registerUsername"
+                    placeholder="Ejemplo: Carlos"
+                    minlength="3"
+                    maxlength="20"
+                    required
+                >
+
+                <label>
+                    Contraseña
+                </label>
+
+                <input
+                    type="password"
+                    id="registerPassword"
+                    placeholder="Mínimo 4 caracteres"
+                    minlength="4"
+                    required
+                >
+
+                <label>
+                    Repetir contraseña
+                </label>
+
+                <input
+                    type="password"
+                    id="registerPassword2"
+                    placeholder="Repite tu contraseña"
+                    minlength="4"
+                    required
+                >
+
+                <button
+                    type="submit"
+                    class="main-button"
+                >
+                    CREAR CUENTA
+                </button>
+
+            </form>
+
+            <button
+                class="text-button"
+                onclick="showScreen('loginScreen')"
+            >
+                Ya tengo una cuenta
+            </button>
+
+            <button
+                class="back-button"
+                onclick="showScreen('welcomeScreen')"
+            >
+                ← Volver
+            </button>
+
+            <div
+                id="registerMessage"
+                class="message"
+            ></div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         INICIO
+    ====================================================== -->
+
+    <section
+        id="homeScreen"
+        class="screen"
+    >
+
+        <header class="top-bar">
+
+            <div class="game-logo">
+                🤟 Señas Aventura
+            </div>
+
+            <div class="header-buttons">
+
+                <button
+                    onclick="openProfile()"
+                    class="profile-button"
+                >
+                    👤 Perfil
+                </button>
+
+                <button
+                    onclick="logout()"
+                    class="logout-button"
+                >
+                    Salir
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <main class="home-container">
+
+
+            <!-- JUGADOR -->
+
+            <div class="player-card">
+
+                <div
+                    class="player-avatar"
+                    id="homeAvatar"
+                >
+                    🧑‍🎓
+                </div>
+
+                <div class="player-information">
+
+                    <h2>
+
+                        ¡Hola,
+
+                        <span id="playerName">
+                            Jugador
+                        </span>!
+
+                    </h2>
+
+                    <p>
+
+                        Nivel
+
+                        <strong id="homeLevel">
+                            1
+                        </strong>
+
+                    </p>
+
+                </div>
+
+                <div class="player-xp">
+
+                    <span>
+                        XP
+                    </span>
+
+                    <strong id="homeXP">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ESTADÍSTICAS -->
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        ⭐
+                    </div>
+
+                    <span class="stat-title">
+                        Puntos
+                    </span>
+
+                    <strong id="score">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        ⚡
+                    </div>
+
+                    <span class="stat-title">
+                        XP
+                    </span>
+
+                    <strong id="xp">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        ❤️
+                    </div>
+
+                    <span class="stat-title">
+                        Vidas
+                    </span>
+
+                    <strong id="lives">
+                        5
+                    </strong>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        💎
+                    </div>
+
+                    <span class="stat-title">
+                        Monedas
+                    </span>
+
+                    <strong id="coins">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- RACHA -->
+
+            <div class="streak-card">
+
+                <div class="streak-icon">
+                    🔥
+                </div>
+
+                <div>
+
+                    <strong>
+                        Racha de aprendizaje
+                    </strong>
+
+                    <p>
+
+                        Llevas
+
+                        <span id="streak">
+                            0
+                        </span>
+
+                        días consecutivos.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PROGRESO XP -->
+
+            <div class="progress-card">
+
+                <div class="progress-header">
+
+                    <h3>
+                        Experiencia
+                    </h3>
+
+                    <span id="xpText">
+                        0 / 100 XP
+                    </span>
+
+                </div>
+
+                <div class="progress-bar">
+
+                    <div
+                        id="xpBar"
+                        class="progress-fill"
+                    ></div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PROGRESO GENERAL -->
+
+            <div class="progress-card">
+
+                <div class="progress-header">
+
+                    <h3>
+                        Progreso general
+                    </h3>
+
+                    <span id="progressText">
+                        0%
+                    </span>
+
+                </div>
+
+                <div class="progress-bar">
+
+                    <div
+                        id="progressBar"
+                        class="progress-fill"
+                    ></div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- MENÚ -->
+
+            <div class="section-title">
+
+                <h2>
+                    🎮 Tu aventura
+                </h2>
+
+            </div>
+
+
+            <div class="game-menu">
+
+
+                <button
+                    class="game-card"
+                    onclick="startAdventure()"
+                >
+
+                    <span class="game-card-icon">
+                        🗺️
+                    </span>
+
+                    <span class="game-card-title">
+                        Mapa de niveles
+                    </span>
+
+                    <span class="game-card-description">
+                        Aprende paso a paso
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="game-card"
+                    onclick="openProfile()"
+                >
+
+                    <span class="game-card-icon">
+                        👤
+                    </span>
+
+                    <span class="game-card-title">
+                        Mi perfil
+                    </span>
+
+                    <span class="game-card-description">
+                        Tus estadísticas
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="game-card"
+                    onclick="openVideos()"
+                >
+
+                    <span class="game-card-icon">
+                        📺
+                    </span>
+
+                    <span class="game-card-title">
+                        Videos
+                    </span>
+
+                    <span class="game-card-description">
+                        Aprende viendo
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="game-card"
+                    onclick="showRanking()"
+                >
+
+                    <span class="game-card-icon">
+                        🌎
+                    </span>
+
+                    <span class="game-card-title">
+                        Clasificación local
+                    </span>
+
+                    <span class="game-card-description">
+                        Solo en este dispositivo
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="game-card"
+                    onclick="showAchievements()"
+                >
+
+                    <span class="game-card-icon">
+                        🏆
+                    </span>
+
+                    <span class="game-card-title">
+                        Logros
+                    </span>
+
+                    <span class="game-card-description">
+                        Insignias y metas
+                    </span>
+
+                </button>
+
+                <button
+                    class="game-card"
+                    onclick="openShop()"
+                >
+
+                    <span class="game-card-icon">
+                        🛍️
+                    </span>
+
+                    <span class="game-card-title">
+                        Tienda
+                    </span>
+
+                    <span class="game-card-description">
+                        Personaliza tu perfil con gemas
+                    </span>
+
+                </button>
+
+            </div>
+
+        </main>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PERFIL
+    ====================================================== -->
+
+    <section
+        id="profileScreen"
+        class="screen"
+    >
+
+        <div class="profile-container">
+
+            <button
+                class="back-button"
+                onclick="showScreen('homeScreen')"
+            >
+                ← Volver
+            </button>
+
+
+            <div class="profile-header">
+
+                <div class="profile-card-display" id="profileCardDisplay">
+
+                    <span
+                        class="profile-badge-display"
+                        id="profileBadgeDisplay"
+                        hidden
+                    ></span>
+
+                    <div
+                        class="big-avatar"
+                        id="profileAvatar"
+                    >
+                        🧑‍🎓
+                    </div>
+
+                    <h1 id="profileName">
+                        Jugador
+                    </h1>
+
+                    <p>
+                        Nivel
+                        <strong id="profileLevel">1</strong>
+                    </p>
+
+                </div>
+
+            </div>
+
+            <button
+                class="main-button profile-shop-button"
+                onclick="openShop()"
+            >
+                🛍️ Abrir tienda de gemas
+            </button>
+
+
+            <div class="profile-section">
+
+                <h2>
+                    🧑 Elige tu avatar
+                </h2>
+
+                <div class="avatar-options">
+
+                    <button
+                        onclick="selectAvatar('🧑‍🎓')"
+                    >
+                        🧑‍🎓
+                    </button>
+
+                    <button
+                        onclick="selectAvatar('👨‍🚀')"
+                    >
+                        👨‍🚀
+                    </button>
+
+                    <button
+                        onclick="selectAvatar('👩‍🚀')"
+                    >
+                        👩‍🚀
+                    </button>
+
+                    <button
+                        onclick="selectAvatar('🦸')"
+                    >
+                        🦸
+                    </button>
+
+                    <button
+                        onclick="selectAvatar('🦸‍♀️')"
+                    >
+                        🦸‍♀️
+                    </button>
+
+                    <button
+                        onclick="selectAvatar('🧙')"
+                    >
+                        🧙
+                    </button>
+
+                    <button
+                        onclick="selectAvatar('🥷')"
+                    >
+                        🥷
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="profile-section">
+
+                <h2>
+                    📊 Estadísticas
+                </h2>
+
+                <div class="profile-stats">
+<div>
+
+    <span>
+        🎯 Precisión
+    </span>
+
+    <strong id="profileAccuracy">
+        0%
+    </strong>
+
+</div>
+
+
+<div>
+
+    <span>
+        🏆 Logros
+    </span>
+
+    <strong id="profileAchievementCount">
+        0
+    </strong>
+
+</div>
+                    <div>
+                        <span>
+                            ⭐ Puntos
+                        </span>
+
+                        <strong id="profileScore">
+                            0
+                        </strong>
+                    </div>
+
+
+                    <div>
+                        <span>
+                            ⚡ XP
+                        </span>
+
+                        <strong id="profileXP">
+                            0
+                        </strong>
+                    </div>
+
+
+                    <div>
+                        <span>
+                            💎 Monedas
+                        </span>
+
+                        <strong id="profileCoins">
+                            0
+                        </strong>
+                    </div>
+
+
+                    <div>
+                        <span>
+                            🔥 Racha
+                        </span>
+
+                        <strong id="profileStreak">
+                            0
+                        </strong>
+                    </div>
+
+
+                    <div>
+                        <span>
+                            📚 Lecciones
+                        </span>
+
+                        <strong id="profileLessons">
+                            0
+                        </strong>
+                    </div>
+
+
+                    <div>
+                        <span>
+                            🎮 Juegos
+                        </span>
+
+                        <strong id="profileGames">
+                            0
+                        </strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="profile-section">
+
+                <h2>
+                    🏅 Logros
+                </h2>
+
+                <div
+                    id="achievements"
+                    class="achievements"
+                ></div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         MAPA DE NIVELES
+    ====================================================== -->
+
+    <section
+        id="adventureScreen"
+        class="screen"
+    >
+
+        <div class="adventure-container">
+
+            <div class="adventure-header">
+
+                <button
+                    class="back-button"
+                    onclick="showScreen('homeScreen')"
+                >
+                    ← Menú
+                </button>
+
+                <div class="level-indicator">
+
+                    NIVEL
+                    <span id="mapLevel">
+                        1
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <h1 class="map-title">
+                🗺️ Mapa de aprendizaje
+            </h1>
+
+            <p class="map-subtitle">
+
+                Completa cada nivel para
+                desbloquear el siguiente.
+
+            </p>
+
+
+            <div
+                id="levelsMap"
+                class="levels-map"
+            >
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PANTALLA DEL NIVEL
+    ====================================================== -->
+
+    <section
+        id="levelIntroScreen"
+        class="screen"
+    >
+
+        <div class="level-intro-container">
+
+            <button
+                class="back-button"
+                onclick="startAdventure()"
+            >
+                ← Mapa
+            </button>
+
+
+            <div
+                id="selectedLevelIcon"
+                class="selected-level-icon"
+            >
+                🔤
+            </div>
+
+
+            <h1 id="selectedLevelTitle">
+                Abecedario
+            </h1>
+
+
+            <p id="selectedLevelDescription">
+                Aprende las letras.
+            </p>
+
+
+            <div class="level-reward-box">
+
+                <div>
+                    ⭐
+                    <strong>
+                        100
+                    </strong>
+                    puntos
+                </div>
+
+                <div>
+                    ⚡
+                    <strong>
+                        50
+                    </strong>
+                    XP
+                </div>
+
+                <div>
+                    💎
+                    <strong>
+                        20
+                    </strong>
+                    monedas
+                </div>
+
+            </div>
+
+
+            <button
+                class="main-button"
+                onclick="startSelectedLevel()"
+            >
+                🚀 COMENZAR NIVEL
+            </button>
+
+        </div>
+
+    </section>
+
+
+</div>
+<!-- =====================================================
+     ENTREGA 4 - JUEGO DEL ABECEDARIO
+====================================================== -->
+
+<section
+    id="alphabetGameScreen"
+    class="screen"
+>
+
+    <div class="game-container">
+
+        <!-- ENCABEZADO DEL JUEGO -->
+
+        <div class="game-header">
+
+            <button
+                class="back-button"
+                onclick="exitAlphabetGame()"
+            >
+                ← Salir
+            </button>
+
+            <div class="game-title">
+
+                🤟 Abecedario
+
+            </div>
+
+            <div class="game-score">
+
+                ⭐ <span id="gameScore">0</span>
+
+            </div>
+
+        </div>
+
+
+        <!-- INFORMACIÓN -->
+
+        <div class="game-information">
+
+            <div class="game-stat">
+
+                ❤️
+
+                <span id="gameLives">
+                    5
+                </span>
+
+            </div>
+
+
+            <div class="game-stat">
+
+                🔥
+
+                <span id="gameCombo">
+                    0
+                </span>
+
+            </div>
+
+
+            <div class="game-stat">
+
+                ⏱️
+
+                <span id="gameTimer">
+                    30
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- BARRA DE PROGRESO -->
+
+        <div class="question-progress">
+
+            <div class="question-progress-header">
+
+                <span>
+
+                    Pregunta
+
+                    <strong id="currentQuestion">
+                        1
+                    </strong>
+
+                    de
+
+                    <strong id="totalQuestions">
+                        10
+                    </strong>
+
+                </span>
+
+
+                <span id="questionPercentage">
+                    10%
+                </span>
+
+            </div>
+
+
+            <div class="question-progress-bar">
+
+                <div
+                    id="questionProgressFill"
+                    class="question-progress-fill"
+                ></div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PREGUNTA -->
+
+        <div class="question-card">
+
+            <div class="question-icon">
+
+                🤟
+
+            </div>
+
+
+            <h1>
+
+                ¿Qué letra está haciendo esta mano?
+
+            </h1>
+
+
+            <p id="questionHint">
+
+                Observa la seña de la mano y elige
+                la letra correcta.
+
+            </p>
+
+            <p
+                id="alphabetImageCredit"
+                class="image-credit"
+                hidden
+            >
+                Imágenes de dactilología: Fundación CNSE.
+                <a
+                    href="https://fundacioncnse.org/educa/bancolse/dactilologico.php"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >Fuente</a> ·
+                <a
+                    href="https://creativecommons.org/licenses/by-nc-sa/3.0/es/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >CC BY-NC-SA 3.0 ES</a>
+            </p>
+
+        </div>
+
+
+        <!-- OPCIONES -->
+
+        <div
+            id="alphabetOptions"
+            class="alphabet-options"
+        >
+
+        </div>
+
+
+        <!-- MENSAJE -->
+
+        <div
+            id="answerMessage"
+            class="answer-message"
+        ></div>
+
+
+        <!-- BOTÓN SIGUIENTE -->
+
+        <button
+            id="nextQuestionButton"
+            class="main-button next-button"
+            onclick="nextAlphabetQuestion()"
+            style="display:none;"
+        >
+
+            SIGUIENTE ➜
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     RESULTADOS DEL JUEGO
+====================================================== -->
+
+<section
+    id="alphabetResultScreen"
+    class="screen"
+>
+
+    <div class="result-container">
+
+        <div
+            id="resultIcon"
+            class="result-icon"
+        >
+            🏆
+        </div>
+
+
+        <h1>
+            ¡Nivel terminado!
+        </h1>
+
+
+        <p id="resultMessage">
+
+            Excelente trabajo.
+
+        </p>
+
+
+        <!-- ESTRELLAS -->
+
+        <div
+            id="resultStars"
+            class="result-stars"
+        >
+
+            ☆☆☆
+
+        </div>
+
+
+        <!-- ESTADÍSTICAS -->
+
+        <div class="result-stats">
+
+            <div>
+
+                <span>
+                    ⭐ Puntos
+                </span>
+
+                <strong id="finalScore">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    ✅ Correctas
+                </span>
+
+                <strong id="finalCorrect">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    ❌ Incorrectas
+                </span>
+
+                <strong id="finalIncorrect">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    ⚡ XP
+                </span>
+
+                <strong id="finalXP">
+                    0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="result-buttons">
+
+            <button
+                class="main-button"
+                onclick="startAlphabetGame()"
+            >
+
+                🔄 JUGAR DE NUEVO
+
+            </button>
+
+
+            <button
+                class="secondary-button"
+                onclick="startAdventure()"
+            >
+
+                🗺️ VOLVER AL MAPA
+
+            </button>
+
+
+            <button
+                class="secondary-button"
+                onclick="showScreen('homeScreen')"
+            >
+
+                🏠 MENÚ PRINCIPAL
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     ENTREGA 5
+     VISOR DE SEÑAS
+===================================================== -->
+
+<section
+    id="signLearningScreen"
+    class="screen"
+>
+
+    <div class="sign-learning-container">
+
+        <button
+            class="back-button"
+            onclick="showScreen('homeScreen')"
+        >
+            ← Volver
+        </button>
+
+        <div class="sign-learning-header">
+
+            <div class="sign-big-icon">
+                🤟
+            </div>
+
+            <h1>
+                Aprende una seña
+            </h1>
+
+            <p>
+                Observa, practica y recuerda.
+            </p>
+
+        </div>
+
+
+        <div class="sign-card">
+
+            <div
+                id="signImageContainer"
+                class="sign-image-container"
+            >
+
+                <div class="sign-placeholder">
+                    🤟
+                </div>
+
+            </div>
+
+
+            <h2 id="signLetter">
+                A
+            </h2>
+
+
+            <p id="signWord">
+                Letra A
+            </p>
+
+
+            <div class="sign-information">
+
+                <div>
+                    👀
+                    Observa
+                </div>
+
+                <div>
+                    🧠
+                    Memoriza
+                </div>
+
+                <div>
+                    🤟
+                    Practica
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <button
+            class="main-button"
+            onclick="startAlphabetGame()"
+        >
+            🎮 PRACTICAR
+        </button>
+
+    </div>
+
+</section>
+<section
+    id="numbersGameScreen"
+    class="screen"
+>
+
+    <div class="game-container">
+
+        <div class="game-header">
+
+            <button
+                class="back-button"
+                onclick="startAdventure()"
+            >
+                ← Salir
+            </button>
+
+            <div class="game-title">
+                🔢 Números
+            </div>
+
+            <div class="game-score">
+                ⭐ <span id="numbersScore">0</span>
+            </div>
+
+        </div>
+
+
+        <div class="question-progress">
+
+            <div class="question-progress-header">
+
+                <span>
+
+                    Pregunta
+                    <strong id="numbersQuestion">
+                        1
+                    </strong>
+                    de 10
+
+                </span>
+
+                <span id="numbersPercent">
+                    10%
+                </span>
+
+            </div>
+
+            <div class="question-progress-bar">
+
+                <div
+                    id="numbersProgress"
+                    class="question-progress-fill"
+                ></div>
+
+            </div>
+
+        </div>
+
+
+        <div class="question-card">
+
+            <div
+                id="numberQuestionIcon"
+                class="question-icon"
+            >
+                🔢
+            </div>
+
+            <h1>
+                ¿Qué número es?
+            </h1>
+
+            <p>
+                Observa el número y selecciona
+                la respuesta correcta.
+            </p>
+
+        </div>
+
+
+        <div
+            id="numbersOptions"
+            class="alphabet-options"
+        ></div>
+
+
+        <div
+            id="numbersMessage"
+            class="answer-message"
+        ></div>
+
+
+        <button
+            id="numbersNext"
+            class="main-button"
+            style="display:none;"
+            onclick="nextNumberQuestion()"
+        >
+            SIGUIENTE ➜
+        </button>
+
+    </div>
+
+</section>
+<section
+    id="examScreen"
+    class="screen"
+>
+
+    <div class="game-container">
+
+        <button
+            class="back-button"
+            onclick="startAdventure()"
+        >
+            ← Salir
+        </button>
+
+        <h1>🧠 Examen de conocimiento</h1>
+
+        <p>
+            Demuestra todo lo que has aprendido.
+        </p>
+
+        <div class="question-card">
+
+            <div
+                id="examIcon"
+                class="question-icon"
+            >
+                🧠
+            </div>
+
+            <h2 id="examQuestion">
+                Pregunta
+            </h2>
+
+        </div>
+
+        <div
+            id="examOptions"
+            class="alphabet-options"
+        ></div>
+
+        <p id="examResult"></p>
+
+    </div>
+
+</section>
+<section
+    id="rankingScreen"
+    class="screen"
+>
+
+    <div class="ranking-container">
+
+        <button
+            class="back-button"
+            onclick="showScreen('homeScreen')"
+        >
+            ← Menú
+        </button>
+
+        <div class="ranking-header">
+            <div class="ranking-icon" aria-hidden="true">🏆</div>
+            <div>
+                <h1>Clasificación local</h1>
+                <p>Compara los puntos de los jugadores guardados en esta computadora.</p>
+            </div>
+        </div>
+
+        <div class="ranking-privacy-note">
+            🔒 Privado: esta clasificación se guarda solo en este dispositivo.
+            No se comparte por internet.
+        </div>
+
+        <div
+            id="rankingList"
+            class="ranking-list"
+            aria-live="polite"
+        ></div>
+
+        <button
+            class="secondary-button ranking-refresh"
+            onclick="showRanking()"
+        >
+            ↻ Actualizar clasificación
+        </button>
+
+    </div>
+
+</section>
+<section
+    id="videosScreen"
+    class="screen"
+>
+
+    <div class="video-container">
+
+        <button
+            class="back-button"
+            onclick="showScreen('homeScreen')"
+        >
+            ← Menú
+        </button>
+
+        <h1>📺 Biblioteca de videos</h1>
+
+        <p>
+            Explora videos para aprender Lengua de Signos Española (LSE).
+            Cada botón abre una búsqueda de videos para que puedas elegir
+            el recurso que mejor te ayude.
+        </p>
+
+        <label class="video-search-label" for="videoSearch">
+            Buscar un tema
+        </label>
+
+        <input
+            id="videoSearch"
+            class="video-search"
+            type="search"
+            placeholder="Por ejemplo: animales o saludos"
+            autocomplete="off"
+        >
+
+        <p
+            id="videoResultsStatus"
+            class="video-results-status"
+            aria-live="polite"
+        ></p>
+
+        <div
+            id="videoList"
+            class="video-grid"
+        ></div>
+
+        <p class="video-source-note">
+            También puedes consultar el
+            <a
+                href="https://fundacioncnse.org/educa/bancolse/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >Banco de imágenes y signos de la Fundación CNSE</a>.
+            La LSE es distinta de otras lenguas de signos.
+        </p>
+
+    </div>
+
+</section>
+<section
+    id="libraryScreen"
+    class="screen"
+>
+
+    <div class="game-container">
+
+        <button
+            class="back-button"
+            onclick="startAdventure()"
+        >
+            ← Volver
+        </button>
+
+        <h1>📚 Biblioteca</h1>
+
+        <div
+            id="libraryContent"
+            class="library-grid"
+        ></div>
+
+    </div>
+
+</section>
+<section
+    id="settingsScreen"
+    class="screen"
+>
+
+    <div class="game-container">
+
+        <button
+            class="back-button"
+            onclick="startAdventure()"
+        >
+            ← Volver
+        </button>
+
+        <h1>⚙️ Configuración</h1>
+
+        <div class="settings-card">
+
+            <label>
+                Tamaño de texto
+            </label>
+
+            <input
+                type="range"
+                min="14"
+                max="30"
+                value="18"
+                id="fontSizeControl"
+            >
+
+        </div>
+
+
+        <div class="settings-card">
+
+            <label>
+
+                <input
+                    type="checkbox"
+                    id="highContrast"
+                >
+
+                Alto contraste
+
+            </label>
+
+        </div>
+
+
+        <div class="settings-card">
+
+            <label>
+
+                <input
+                    type="checkbox"
+                    id="animationsControl"
+                >
+
+                Animaciones
+
+            </label>
+
+        </div>
+
+    </div>
+
+</section>
+<section
+    id="shopScreen"
+    class="screen"
+>
+
+    <div class="shop-container">
+
+        <button
+            class="back-button"
+            onclick="closeShop()"
+        >
+            ← Volver
+        </button>
+
+        <div class="shop-header">
+            <div>
+                <h1>🛍️ Tienda de gemas</h1>
+                <p>Personaliza tu perfil y muestra tus logros.</p>
+            </div>
+            <div class="shop-balance">
+                💎 <strong id="shopCoins">0</strong>
+            </div>
+        </div>
+
+        <p class="shop-note">
+            Los artículos son decorativos y se compran con las gemas de esta cuenta.
+        </p>
+
+        <div
+            id="shopItems"
+            class="shop-grid"
+        ></div>
+
+    </div>
+
+</section>
+<section
+    id="achievementsScreen"
+    class="screen"
+>
+
+    <div class="game-container">
+
+        <button
+            class="back-button"
+            onclick="showScreen('homeScreen')"
+        >
+            ← Menú
+        </button>
+
+        <div class="achievement-header">
+            <div>
+                <h1>🏆 Mis logros</h1>
+                <p id="achievementSummary"></p>
+            </div>
+            <button
+                class="secondary-button"
+                onclick="openShop()"
+            >
+                🛍️ Usar gemas
+            </button>
+        </div>
+
+        <div
+            id="achievementsList"
+            class="achievements"
+        ></div>
+
+    </div>
+
+</section>
+
+<script src="app.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,3502 @@
+/* =========================================================
+   SEÑAS AVENTURA
+   CSS - ENTREGA 2
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eef2ff,
+            #f8fafc
+        );
+
+    color: #1e293b;
+
+}
+
+
+button {
+
+    border: none;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+}
+
+.illustration-sprite {
+
+    position: absolute;
+
+    width: 0;
+
+    height: 0;
+
+    overflow: hidden;
+
+}
+
+
+/* =========================================================
+   PANTALLAS
+========================================================= */
+
+.screen {
+
+    display: none;
+
+    min-height: 100vh;
+
+    width: 100%;
+
+}
+
+
+.screen.active {
+
+    display: flex;
+
+}
+
+
+/* =========================================================
+   BIENVENIDA
+========================================================= */
+
+#welcomeScreen {
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 30px;
+
+}
+
+
+.welcome-container {
+
+    width: 100%;
+
+    max-width: 650px;
+
+    text-align: center;
+
+    background: white;
+
+    padding: 55px 40px;
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 20px 60px
+        rgba(
+            15,
+            23,
+            42,
+            .12
+        );
+
+}
+
+
+.logo {
+
+    width: 110px;
+
+    height: 110px;
+
+    margin: auto;
+
+    margin-bottom: 25px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 65px;
+
+    background: #e0e7ff;
+
+    border-radius: 50%;
+
+}
+
+
+.welcome-container h1 {
+
+    font-size: 45px;
+
+    color: #4338ca;
+
+    margin-bottom: 10px;
+
+}
+
+
+.subtitle {
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    color: #475569;
+
+    margin-bottom: 20px;
+
+}
+
+
+.welcome-text {
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    color: #64748b;
+
+    margin-bottom: 35px;
+
+}
+
+
+/* =========================================================
+   BOTONES
+========================================================= */
+
+.main-button {
+
+    width: 100%;
+
+    padding: 17px;
+
+    border-radius: 14px;
+
+    background: #4f46e5;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    margin-top: 15px;
+
+    transition: .2s;
+
+}
+
+
+.main-button:hover {
+
+    background: #4338ca;
+
+    transform: translateY(-2px);
+
+}
+
+
+.secondary-button {
+
+    width: 100%;
+
+    padding: 16px;
+
+    border-radius: 14px;
+
+    background: #eef2ff;
+
+    color: #4338ca;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    margin-top: 12px;
+
+}
+
+
+.text-button {
+
+    background: transparent;
+
+    color: #4f46e5;
+
+    margin-top: 20px;
+
+    font-weight: bold;
+
+}
+
+
+.back-button {
+
+    background: transparent;
+
+    color: #475569;
+
+    font-weight: bold;
+
+    padding: 10px;
+
+}
+
+
+.logout-button {
+
+    padding: 10px 18px;
+
+    background: #fee2e2;
+
+    color: #b91c1c;
+
+    border-radius: 10px;
+
+    font-weight: bold;
+
+}
+
+
+/* =========================================================
+   FORMULARIOS
+========================================================= */
+
+#loginScreen,
+#registerScreen {
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 25px;
+
+}
+
+
+.form-container {
+
+    width: 100%;
+
+    max-width: 480px;
+
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 20px 60px
+        rgba(
+            15,
+            23,
+            42,
+            .12
+        );
+
+}
+
+
+.form-icon {
+
+    width: 80px;
+
+    height: 80px;
+
+    background: #eef2ff;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 42px;
+
+    margin: auto;
+
+    margin-bottom: 20px;
+
+}
+
+
+.form-container h2 {
+
+    text-align: center;
+
+    font-size: 30px;
+
+}
+
+
+.form-container > p {
+
+    text-align: center;
+
+    color: #64748b;
+
+    margin: 8px 0 25px;
+
+}
+
+
+.form-container label {
+
+    display: block;
+
+    font-weight: bold;
+
+    font-size: 14px;
+
+    margin: 18px 0 7px;
+
+}
+
+
+.form-container input {
+
+    width: 100%;
+
+    padding: 15px;
+
+    border: 2px solid #e2e8f0;
+
+    border-radius: 12px;
+
+    font-size: 15px;
+
+    outline: none;
+
+}
+
+
+.form-container input:focus {
+
+    border-color: #6366f1;
+
+}
+
+
+.message {
+
+    text-align: center;
+
+    margin-top: 15px;
+
+    font-weight: bold;
+
+}
+
+
+/* =========================================================
+   BARRA SUPERIOR
+========================================================= */
+
+#homeScreen {
+
+    flex-direction: column;
+
+}
+
+
+.top-bar {
+
+    width: 100%;
+
+    min-height: 70px;
+
+    background: white;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 15px 35px;
+
+    box-shadow:
+        0 3px 15px
+        rgba(
+            15,
+            23,
+            42,
+            .08
+        );
+
+}
+
+
+.game-logo {
+
+    font-size: 21px;
+
+    font-weight: bold;
+
+    color: #4338ca;
+
+}
+
+
+.header-buttons {
+
+    display: flex;
+
+    gap: 10px;
+
+    align-items: center;
+
+}
+
+
+.profile-button {
+
+    background: #eef2ff;
+
+    color: #4338ca;
+
+    padding: 10px 15px;
+
+    border-radius: 10px;
+
+    font-weight: bold;
+
+}
+
+
+/* =========================================================
+   HOME
+========================================================= */
+
+.home-container {
+
+    width: 100%;
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 35px 25px;
+
+}
+
+
+.player-card {
+
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    box-shadow:
+        0 10px 30px
+        rgba(
+            15,
+            23,
+            42,
+            .08
+        );
+
+}
+
+
+.player-avatar {
+
+    width: 75px;
+
+    height: 75px;
+
+    border-radius: 20px;
+
+    background: #e0e7ff;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 42px;
+
+}
+
+
+.player-information {
+
+    flex: 1;
+
+}
+
+
+.player-information h2 {
+
+    font-size: 25px;
+
+}
+
+
+.player-information p {
+
+    color: #64748b;
+
+    margin-top: 5px;
+
+}
+
+
+.player-xp {
+
+    text-align: center;
+
+    background: #f0fdf4;
+
+    padding: 12px 20px;
+
+    border-radius: 15px;
+
+}
+
+
+.player-xp span {
+
+    display: block;
+
+    font-size: 12px;
+
+    color: #64748b;
+
+}
+
+
+.player-xp strong {
+
+    font-size: 22px;
+
+    color: #16a34a;
+
+}
+
+
+/* =========================================================
+   ESTADÍSTICAS
+========================================================= */
+
+.stats-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            4,
+            1fr
+        );
+
+    gap: 18px;
+
+    margin-top: 22px;
+
+}
+
+
+.stat-card {
+
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 23px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(
+            15,
+            23,
+            42,
+            .06
+        );
+
+}
+
+
+.stat-icon {
+
+    font-size: 28px;
+
+}
+
+
+.stat-title {
+
+    color: #64748b;
+
+    font-size: 14px;
+
+}
+
+
+.stat-card strong {
+
+    font-size: 28px;
+
+    color: #4338ca;
+
+}
+
+
+/* =========================================================
+   RACHA
+========================================================= */
+
+.streak-card {
+
+    margin-top: 22px;
+
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(
+            15,
+            23,
+            42,
+            .06
+        );
+
+}
+
+
+.streak-icon {
+
+    font-size: 42px;
+
+}
+
+
+.streak-card strong {
+
+    font-size: 18px;
+
+}
+
+
+.streak-card p {
+
+    color: #64748b;
+
+    margin-top: 5px;
+
+}
+
+
+.streak-card span {
+
+    color: #ea580c;
+
+    font-weight: bold;
+
+}
+
+
+/* =========================================================
+   PROGRESO
+========================================================= */
+
+.progress-card {
+
+    background: white;
+
+    padding: 25px;
+
+    margin-top: 22px;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(
+            15,
+            23,
+            42,
+            .06
+        );
+
+}
+
+
+.progress-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 12px;
+
+}
+
+
+.progress-header span {
+
+    color: #4f46e5;
+
+    font-weight: bold;
+
+}
+
+
+.progress-bar {
+
+    width: 100%;
+
+    height: 16px;
+
+    background: #e2e8f0;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+}
+
+
+.progress-fill {
+
+    width: 0%;
+
+    height: 100%;
+
+    background: #6366f1;
+
+    border-radius: 20px;
+
+    transition: width .5s;
+
+}
+
+
+.progress-card p {
+
+    color: #64748b;
+
+    font-size: 14px;
+
+    margin-top: 12px;
+
+}
+
+
+/* =========================================================
+   MENÚ DE JUEGOS
+========================================================= */
+
+.section-title {
+
+    margin: 35px 0 18px;
+
+}
+
+
+.section-title h2 {
+
+    font-size: 26px;
+
+}
+
+
+.section-title p {
+
+    color: #64748b;
+
+    margin-top: 5px;
+
+}
+
+
+.game-menu {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            4,
+            1fr
+        );
+
+    gap: 18px;
+
+}
+
+
+.game-card {
+
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 25px;
+
+    text-align: left;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    min-height: 170px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(
+            15,
+            23,
+            42,
+            .06
+        );
+
+    transition: .2s;
+
+}
+
+
+.game-card:hover {
+
+    transform: translateY(-5px);
+
+}
+
+
+.game-card-icon {
+
+    font-size: 40px;
+
+}
+
+
+.game-card-title {
+
+    font-size: 19px;
+
+    font-weight: bold;
+
+}
+
+
+.game-card-description {
+
+    color: #64748b;
+
+    font-size: 13px;
+
+}
+
+
+/* =========================================================
+   PERFIL
+========================================================= */
+
+#profileScreen {
+
+    justify-content: center;
+
+    padding: 30px;
+
+}
+
+
+.profile-container {
+
+    width: 100%;
+
+    max-width: 900px;
+
+}
+
+
+.profile-header {
+
+    text-align: center;
+
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 25px;
+
+    margin-top: 10px;
+
+    box-shadow:
+        0 15px 40px
+        rgba(
+            15,
+            23,
+            42,
+            .08
+        );
+
+}
+
+
+.big-avatar {
+
+    width: 120px;
+
+    height: 120px;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 70px;
+
+    background: #e0e7ff;
+
+    border-radius: 50%;
+
+}
+
+
+.profile-header h1 {
+
+    margin-top: 15px;
+
+}
+
+
+.profile-header p {
+
+    color: #64748b;
+
+    margin-top: 5px;
+
+}
+
+
+/* =========================================================
+   SECCIONES PERFIL
+========================================================= */
+
+.profile-section {
+
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 22px;
+
+    margin-top: 20px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(
+            15,
+            23,
+            42,
+            .06
+        );
+
+}
+
+
+.profile-section h2 {
+
+    margin-bottom: 20px;
+
+}
+
+
+/* =========================================================
+   AVATARES
+========================================================= */
+
+.avatar-options {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+
+}
+
+
+.avatar-options button {
+
+    width: 70px;
+
+    height: 70px;
+
+    background: #f1f5f9;
+
+    border-radius: 18px;
+
+    font-size: 38px;
+
+    transition: .2s;
+
+}
+
+
+.avatar-options button:hover {
+
+    transform: scale(1.1);
+
+    background: #e0e7ff;
+
+}
+
+
+/* =========================================================
+   ESTADÍSTICAS PERFIL
+========================================================= */
+
+.profile-stats {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            1fr
+        );
+
+    gap: 15px;
+
+}
+
+
+.profile-stats div {
+
+    background: #f8fafc;
+
+    padding: 18px;
+
+    border-radius: 15px;
+
+}
+
+
+.profile-stats span {
+
+    display: block;
+
+    color: #64748b;
+
+    font-size: 14px;
+
+}
+
+
+.profile-stats strong {
+
+    display: block;
+
+    margin-top: 8px;
+
+    font-size: 25px;
+
+    color: #4338ca;
+
+}
+
+
+/* =========================================================
+   LOGROS
+========================================================= */
+
+.achievements {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            1fr
+        );
+
+    gap: 15px;
+
+}
+
+
+.achievement {
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+    background: #eef2ff;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    font-weight: bold;
+
+}
+
+
+.achievement.locked {
+
+    background: #f1f5f9;
+
+    color: #94a3b8;
+
+}
+
+
+/* =========================================================
+   MAPA
+========================================================= */
+
+#adventureScreen {
+
+    justify-content: center;
+
+    padding: 30px;
+
+}
+
+
+.adventure-container {
+
+    width: 100%;
+
+    max-width: 850px;
+
+}
+
+
+.adventure-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+
+.level-indicator {
+
+    background: #e0e7ff;
+
+    color: #4338ca;
+
+    padding: 10px 18px;
+
+    border-radius: 20px;
+
+    font-weight: bold;
+
+}
+
+
+.map-title {
+
+    text-align: center;
+
+    margin-top: 30px;
+
+    font-size: 36px;
+
+    color: #4338ca;
+
+}
+
+
+.map-subtitle {
+
+    text-align: center;
+
+    color: #64748b;
+
+    margin: 10px 0 25px;
+
+}
+
+
+.levels-map {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+}
+
+
+.level-card {
+
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(
+            15,
+            23,
+            42,
+            .06
+        );
+
+}
+
+
+.level-card.unlocked {
+
+    cursor: pointer;
+
+}
+
+
+.level-card.unlocked:hover {
+
+    transform: translateY(-3px);
+
+}
+
+
+.level-card.locked {
+
+    opacity: .65;
+
+}
+
+
+.level-number {
+
+    width: 55px;
+
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #e0e7ff;
+
+    color: #4338ca;
+
+    border-radius: 50%;
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+}
+
+
+.level-illustration {
+
+    width: 72px;
+
+    height: 72px;
+
+    flex: 0 0 72px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #f1f5f9;
+
+    border-radius: 18px;
+
+}
+
+
+.illustration-image {
+
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+}
+
+
+.level-information {
+
+    flex: 1;
+
+}
+
+
+.level-card p {
+
+    color: #64748b;
+
+    margin-top: 4px;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:850px) {
+
+    .stats-grid {
+
+        grid-template-columns:
+            repeat(
+                2,
+                1fr
+            );
+
+    }
+
+
+    .game-menu {
+
+        grid-template-columns:
+            repeat(
+                2,
+                1fr
+            );
+
+    }
+
+
+    .profile-stats {
+
+        grid-template-columns:
+            repeat(
+                2,
+                1fr
+            );
+
+    }
+
+
+    .achievements {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+}
+
+
+@media(max-width:600px) {
+
+    .welcome-container {
+
+        padding: 40px 25px;
+
+    }
+
+
+    .welcome-container h1 {
+
+        font-size: 34px;
+
+    }
+
+
+    .form-container {
+
+        padding: 30px 22px;
+
+    }
+
+
+    .top-bar {
+
+        padding: 14px 18px;
+
+    }
+
+
+    .game-logo {
+
+        font-size: 16px;
+
+    }
+
+
+    .home-container {
+
+        padding: 25px 15px;
+
+    }
+
+
+    .player-card {
+
+        padding: 18px;
+
+    }
+
+
+    .player-xp {
+
+        display: none;
+
+    }
+
+
+    .stats-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .game-menu {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .profile-stats {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .header-buttons {
+
+        gap: 5px;
+
+    }
+
+
+    .profile-button,
+    .logout-button {
+
+        padding: 8px 10px;
+
+        font-size: 12px;
+
+    }
+
+}
+/* =========================================================
+   ENTREGA 3
+   MAPA COMPLETO DE NIVELES
+========================================================= */
+
+
+/* =========================================================
+   MAPA
+========================================================= */
+
+.levels-map {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+
+    margin-top: 25px;
+
+}
+
+
+.level-card {
+
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(
+            15,
+            23,
+            42,
+            .07
+        );
+
+    transition: .25s;
+
+    border: 2px solid transparent;
+
+}
+
+
+.level-card.unlocked {
+
+    cursor: pointer;
+
+}
+
+
+.level-card.unlocked:hover {
+
+    transform: translateY(-4px);
+
+    border-color: #6366f1;
+
+}
+
+
+.level-card.completed {
+
+    border-color: #22c55e;
+
+}
+
+
+.level-card.locked {
+
+    opacity: .55;
+
+    filter: grayscale(.4);
+
+}
+
+
+.level-number {
+
+    width: 65px;
+
+    height: 65px;
+
+    min-width: 65px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: #e0e7ff;
+
+    color: #4338ca;
+
+    border-radius: 50%;
+
+    font-size: 25px;
+
+    font-weight: bold;
+
+}
+
+
+.level-card.completed
+.level-number {
+
+    background: #dcfce7;
+
+    color: #15803d;
+
+}
+
+
+.level-card.locked
+.level-number {
+
+    background: #e2e8f0;
+
+    color: #64748b;
+
+}
+
+
+.level-information {
+
+    flex: 1;
+
+}
+
+
+.level-information h2 {
+
+    font-size: 20px;
+
+    margin-bottom: 5px;
+
+}
+
+
+.level-information p {
+
+    color: #64748b;
+
+    font-size: 14px;
+
+}
+
+
+.level-progress {
+
+    margin-top: 10px;
+
+}
+
+
+.level-progress-bar {
+
+    width: 100%;
+
+    max-width: 400px;
+
+    height: 9px;
+
+    background: #e2e8f0;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+}
+
+
+.level-progress-fill {
+
+    height: 100%;
+
+    background: #6366f1;
+
+    border-radius: 20px;
+
+}
+
+
+.level-stars {
+
+    margin-top: 5px;
+
+    font-size: 18px;
+
+    letter-spacing: 3px;
+
+}
+
+
+.level-status {
+
+    font-size: 27px;
+
+}
+
+
+/* =========================================================
+   INTRO DEL NIVEL
+========================================================= */
+
+#levelIntroScreen {
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 30px;
+
+}
+
+
+.level-intro-container {
+
+    width: 100%;
+
+    max-width: 700px;
+
+    background: white;
+
+    border-radius: 30px;
+
+    padding: 40px;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 60px
+        rgba(
+            15,
+            23,
+            42,
+            .12
+        );
+
+}
+
+
+.selected-level-icon {
+
+    width: 120px;
+
+    height: 120px;
+
+    margin-top: 20px;
+
+    margin-bottom: 15px;
+
+    margin-left: auto;
+
+    margin-right: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #f1f5f9;
+
+    border-radius: 28px;
+
+}
+
+
+.selected-level-icon .illustration-image {
+
+    width: 100%;
+
+    height: 100%;
+
+}
+
+
+.level-intro-container h1 {
+
+    font-size: 38px;
+
+    color: #4338ca;
+
+    margin-bottom: 10px;
+
+}
+
+
+.level-intro-container > p {
+
+    color: #64748b;
+
+    font-size: 17px;
+
+    line-height: 1.6;
+
+}
+
+
+.level-reward-box {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            1fr
+        );
+
+    gap: 12px;
+
+    margin-top: 30px;
+
+}
+
+
+.level-reward-box div {
+
+    background: #f8fafc;
+
+    border-radius: 15px;
+
+    padding: 18px;
+
+    color: #475569;
+
+}
+
+
+.level-reward-box strong {
+
+    color: #4338ca;
+
+}
+
+
+/* =========================================================
+   TÍTULO MAPA
+========================================================= */
+
+.map-title {
+
+    text-align: center;
+
+    font-size: 38px;
+
+    color: #4338ca;
+
+    margin-top: 30px;
+
+}
+
+
+.map-subtitle {
+
+    text-align: center;
+
+    color: #64748b;
+
+    margin-top: 8px;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE MAPA
+========================================================= */
+
+@media(max-width:600px) {
+
+    .level-card {
+
+        padding: 15px;
+
+        gap: 12px;
+
+    }
+
+
+    .level-number {
+
+        width: 52px;
+
+        height: 52px;
+
+        min-width: 52px;
+
+        font-size: 20px;
+
+    }
+
+
+    .level-information h2 {
+
+        font-size: 16px;
+
+    }
+
+
+    .level-information p {
+
+        font-size: 12px;
+
+    }
+
+
+    .level-stars {
+
+        font-size: 15px;
+
+    }
+
+
+    .level-intro-container {
+
+        padding: 30px 20px;
+
+    }
+
+
+    .selected-level-icon {
+
+        font-size: 70px;
+
+    }
+
+
+    .level-intro-container h1 {
+
+        font-size: 30px;
+
+    }
+
+
+    .level-reward-box {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+/* =========================================================
+   ENTREGA 4
+   JUEGO DEL ABECEDARIO
+========================================================= */
+
+
+/* =========================================================
+   CONTENEDOR DEL JUEGO
+========================================================= */
+
+.game-container {
+
+    width: 100%;
+
+    max-width: 1000px;
+
+    margin: auto;
+
+    padding: 25px;
+
+}
+
+
+/* =========================================================
+   ENCABEZADO
+========================================================= */
+
+.game-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 25px;
+
+}
+
+
+.game-title {
+
+    font-size: 26px;
+
+    font-weight: 800;
+
+    color: #4338ca;
+
+}
+
+
+.game-score {
+
+    background: white;
+
+    padding: 12px 18px;
+
+    border-radius: 15px;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 5px 20px
+        rgba(0,0,0,.07);
+
+}
+
+
+/* =========================================================
+   ESTADÍSTICAS
+========================================================= */
+
+.game-information {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.game-stat {
+
+    background: white;
+
+    padding: 15px;
+
+    border-radius: 16px;
+
+    text-align: center;
+
+    font-size: 22px;
+
+    box-shadow:
+        0 5px 20px
+        rgba(0,0,0,.06);
+
+}
+
+
+.game-stat span {
+
+    font-weight: bold;
+
+    margin-left: 5px;
+
+}
+
+
+/* =========================================================
+   PROGRESO DE PREGUNTAS
+========================================================= */
+
+.question-progress {
+
+    background: white;
+
+    padding: 18px;
+
+    border-radius: 18px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.question-progress-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 10px;
+
+    color: #475569;
+
+}
+
+
+.question-progress-bar {
+
+    height: 10px;
+
+    background: #e2e8f0;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+}
+
+
+.question-progress-fill {
+
+    height: 100%;
+
+    width: 10%;
+
+    background: #6366f1;
+
+    border-radius: 20px;
+
+    transition: width .4s ease;
+
+}
+
+
+/* =========================================================
+   TARJETA DE PREGUNTA
+========================================================= */
+
+.question-card {
+
+    background: white;
+
+    border-radius: 28px;
+
+    padding: 45px 25px;
+
+    text-align: center;
+
+    box-shadow:
+        0 15px 50px
+        rgba(15,23,42,.08);
+
+    margin-bottom: 25px;
+
+}
+
+
+.question-icon {
+
+    width: 150px;
+
+    height: 150px;
+
+    margin: auto;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: #eef2ff;
+
+    border-radius: 30px;
+
+    font-size: 80px;
+
+    margin-bottom: 20px;
+
+}
+
+.question-art {
+
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+}
+
+.image-credit {
+
+    margin-top: 12px;
+
+    color: #64748b;
+
+    font-size: 13px;
+
+}
+
+.image-credit a {
+
+    color: #4338ca;
+
+    text-decoration: underline;
+
+}
+
+
+.question-card h1 {
+
+    font-size: 28px;
+
+    color: #1e293b;
+
+}
+
+
+.question-card p {
+
+    color: #64748b;
+
+    line-height: 1.6;
+
+}
+
+
+/* =========================================================
+   OPCIONES
+========================================================= */
+
+.alphabet-options {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+
+}
+
+
+.alphabet-option {
+
+    border: none;
+
+    background: white;
+
+    border-radius: 20px;
+
+    min-height: 90px;
+
+    font-size: 35px;
+
+    font-weight: 800;
+
+    color: #4338ca;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 7px 25px
+        rgba(0,0,0,.07);
+
+    transition: .2s;
+
+}
+
+
+.alphabet-option:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 12px 30px
+        rgba(0,0,0,.12);
+
+}
+
+
+.alphabet-option.correct {
+
+    background: #dcfce7;
+
+    color: #15803d;
+
+}
+
+
+.alphabet-option.incorrect {
+
+    background: #fee2e2;
+
+    color: #b91c1c;
+
+}
+
+
+.alphabet-option.disabled {
+
+    pointer-events: none;
+
+    opacity: .7;
+
+}
+
+
+/* =========================================================
+   MENSAJE DE RESPUESTA
+========================================================= */
+
+.answer-message {
+
+    min-height: 35px;
+
+    text-align: center;
+
+    margin-top: 20px;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+}
+
+
+.answer-correct {
+
+    color: #15803d;
+
+}
+
+
+.answer-incorrect {
+
+    color: #b91c1c;
+
+}
+
+
+/* =========================================================
+   BOTÓN SIGUIENTE
+========================================================= */
+
+.next-button {
+
+    margin-top: 15px;
+
+}
+
+
+/* =========================================================
+   RESULTADOS
+========================================================= */
+
+#alphabetResultScreen {
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 25px;
+
+}
+
+
+.result-container {
+
+    width: 100%;
+
+    max-width: 650px;
+
+    background: white;
+
+    border-radius: 30px;
+
+    padding: 45px;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 60px
+        rgba(15,23,42,.12);
+
+}
+
+
+.result-icon {
+
+    font-size: 80px;
+
+}
+
+
+.result-container h1 {
+
+    color: #4338ca;
+
+    font-size: 35px;
+
+}
+
+
+.result-container p {
+
+    color: #64748b;
+
+}
+
+
+.result-stars {
+
+    font-size: 50px;
+
+    letter-spacing: 8px;
+
+    margin: 20px 0;
+
+}
+
+
+.result-stats {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 15px;
+
+    margin: 30px 0;
+
+}
+
+
+.result-stats div {
+
+    background: #f8fafc;
+
+    padding: 20px;
+
+    border-radius: 18px;
+
+}
+
+
+.result-stats span {
+
+    display: block;
+
+    color: #64748b;
+
+    margin-bottom: 5px;
+
+}
+
+
+.result-stats strong {
+
+    display: block;
+
+    font-size: 25px;
+
+    color: #4338ca;
+
+}
+
+
+.result-buttons {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:700px) {
+
+    .alphabet-options {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .game-information {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+    }
+
+
+    .game-stat {
+
+        font-size: 18px;
+
+        padding: 12px 5px;
+
+    }
+
+
+    .question-card h1 {
+
+        font-size: 22px;
+
+    }
+
+
+    .question-icon {
+
+        width: 120px;
+
+        height: 120px;
+
+        font-size: 65px;
+
+    }
+
+
+    .result-container {
+
+        padding: 30px 20px;
+
+    }
+
+}
+
+
+@media(max-width:450px) {
+
+    .game-header {
+
+        gap: 10px;
+
+    }
+
+
+    .game-title {
+
+        font-size: 19px;
+
+    }
+
+
+    .game-score {
+
+        padding: 8px;
+
+        font-size: 16px;
+
+    }
+
+
+    .result-stats {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+}
+/* =========================================================
+   ENTREGA 5
+   TARJETAS DE SEÑAS
+========================================================= */
+
+.sign-learning-container {
+
+    width: 100%;
+
+    max-width: 800px;
+
+    margin: auto;
+
+    padding: 30px;
+
+}
+
+
+.sign-learning-header {
+
+    text-align: center;
+
+    margin: 20px 0;
+
+}
+
+
+.sign-big-icon {
+
+    font-size: 70px;
+
+}
+
+
+.sign-learning-header h1 {
+
+    font-size: 35px;
+
+    color: #4338ca;
+
+}
+
+
+.sign-learning-header p {
+
+    color: #64748b;
+
+}
+
+
+.sign-card {
+
+    background: white;
+
+    border-radius: 30px;
+
+    padding: 35px;
+
+    text-align: center;
+
+    box-shadow:
+        0 15px 50px
+        rgba(0,0,0,.08);
+
+}
+
+
+.sign-image-container {
+
+    width: 300px;
+
+    height: 300px;
+
+    margin: auto;
+
+    border-radius: 25px;
+
+    background: #eef2ff;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    overflow: hidden;
+
+}
+
+
+.sign-image-container img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+}
+
+
+.sign-placeholder {
+
+    font-size: 120px;
+
+}
+
+
+.sign-card h2 {
+
+    font-size: 50px;
+
+    color: #4338ca;
+
+    margin: 20px 0 5px;
+
+}
+
+
+.sign-card > p {
+
+    font-size: 20px;
+
+    color: #64748b;
+
+}
+
+
+.sign-information {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 10px;
+
+    margin-top: 25px;
+
+}
+
+
+.sign-information div {
+
+    background: #f8fafc;
+
+    border-radius: 15px;
+
+    padding: 15px;
+
+    font-weight: bold;
+
+}
+/* =========================================================
+   ENTREGA 10
+   LOGROS
+========================================================= */
+
+.achievements {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 15px;
+
+}
+
+
+.achievement {
+
+    background: #eef2ff;
+
+    padding: 20px;
+
+    border-radius: 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    font-weight: bold;
+
+}
+
+
+.achievement.locked {
+
+    opacity: .45;
+
+    filter: grayscale(1);
+
+}
+
+
+.achievement:first-letter {
+
+    font-size: 30px;
+
+}
+
+
+@media(max-width:600px) {
+
+    .achievements {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+}
+/* =========================================================
+   VIDEOS
+========================================================= */
+
+.video-container {
+
+    max-width: 1000px;
+
+    margin: auto;
+
+    padding: 30px;
+
+}
+
+.video-container > h1 {
+
+    color: #4338ca;
+
+    margin-bottom: 12px;
+
+}
+
+.video-container > p {
+
+    color: #475569;
+
+    line-height: 1.6;
+
+}
+
+.video-search-label {
+
+    display: block;
+
+    margin-top: 24px;
+
+    margin-bottom: 8px;
+
+    font-weight: bold;
+
+}
+
+.video-search {
+
+    width: 100%;
+
+    max-width: 520px;
+
+    padding: 14px 16px;
+
+    border: 2px solid #c7d2fe;
+
+    border-radius: 14px;
+
+    font: inherit;
+
+}
+
+.video-search:focus {
+
+    outline: 3px solid #a5b4fc;
+
+    outline-offset: 2px;
+
+}
+
+.video-results-status {
+
+    min-height: 24px;
+
+    margin: 14px 0;
+
+    color: #475569;
+
+}
+
+.video-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 20px;
+
+}
+
+.video-card {
+
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0,0,0,.08);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 12px;
+
+}
+
+.video-icon {
+
+    font-size: 60px;
+
+}
+
+.video-card h2 {
+
+    color: #312e81;
+
+    font-size: 22px;
+
+}
+
+.video-card p {
+
+    color: #475569;
+
+    line-height: 1.5;
+
+    flex: 1;
+
+}
+
+.video-link {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 100%;
+
+    max-width: 260px;
+
+    text-decoration: none;
+
+}
+
+.video-source-note {
+
+    margin-top: 24px;
+
+    padding: 16px;
+
+    background: #eef2ff;
+
+    border-radius: 14px;
+
+}
+
+.video-source-note a {
+
+    color: #4338ca;
+
+    font-weight: bold;
+
+}
+
+.ranking-container {
+
+    width: 100%;
+
+    max-width: 850px;
+
+    margin: auto;
+
+    padding: 30px;
+
+}
+
+.ranking-header {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin: 20px 0;
+
+}
+
+.ranking-icon {
+
+    font-size: 56px;
+
+}
+
+.ranking-header h1 {
+
+    color: #4338ca;
+
+}
+
+.ranking-header p {
+
+    margin-top: 6px;
+
+    color: #475569;
+
+    line-height: 1.5;
+
+}
+
+.ranking-privacy-note {
+
+    margin-bottom: 20px;
+
+    padding: 16px;
+
+    color: #166534;
+
+    background: #dcfce7;
+
+    border-radius: 14px;
+
+    line-height: 1.5;
+
+}
+
+.ranking-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+}
+
+.ranking-row {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 16px;
+
+    background: white;
+
+    border: 2px solid transparent;
+
+    border-radius: 18px;
+
+    box-shadow: 0 8px 24px rgba(15, 23, 42, .07);
+
+}
+
+.ranking-row.current-player {
+
+    border-color: #6366f1;
+
+    background: #eef2ff;
+
+}
+
+.ranking-position {
+
+    width: 42px;
+
+    flex: 0 0 42px;
+
+    text-align: center;
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+}
+
+.ranking-avatar {
+
+    font-size: 32px;
+
+}
+
+.ranking-player-details {
+
+    display: flex;
+
+    flex: 1;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+    min-width: 0;
+
+}
+
+.ranking-player-details span {
+
+    color: #64748b;
+
+    font-size: 14px;
+
+}
+
+.ranking-score {
+
+    color: #4338ca;
+
+    white-space: nowrap;
+
+}
+
+.ranking-empty {
+
+    padding: 24px;
+
+    color: #475569;
+
+    background: white;
+
+    border-radius: 18px;
+
+    line-height: 1.5;
+
+}
+
+.ranking-refresh {
+
+    margin-top: 20px;
+
+}
+
+@media(max-width:700px) {
+
+    .video-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .ranking-container {
+
+        padding: 20px;
+
+    }
+
+    .ranking-row {
+
+        gap: 9px;
+
+        padding: 13px;
+
+    }
+
+    .ranking-position {
+
+        width: 32px;
+
+        flex-basis: 32px;
+
+    }
+
+    .ranking-score {
+
+        font-size: 14px;
+
+    }
+
+}
+.library-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+}
+
+@media(max-width:700px) {
+
+    .library-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+/* =========================================================
+   ACCESIBILIDAD
+========================================================= */
+
+.shop-container {
+    width: min(1120px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 28px 0 48px;
+}
+
+.shop-header,
+.achievement-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    margin: 20px 0;
+}
+
+.shop-header h1,
+.achievement-header h1 {
+    margin-bottom: 8px;
+}
+
+.shop-balance {
+    flex-shrink: 0;
+    padding: 12px 18px;
+    border-radius: 18px;
+    background: #fff7cc;
+    color: #854d0e;
+    font-size: 1.15rem;
+}
+
+.shop-note,
+.shop-status {
+    margin: 12px 0;
+    color: #475569;
+}
+
+.shop-status {
+    grid-column: 1 / -1;
+    min-height: 1.4em;
+    font-weight: 700;
+}
+
+.shop-category {
+    margin: 24px 0;
+}
+
+.shop-category h2 {
+    margin: 0 0 14px;
+}
+
+.shop-category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 16px;
+}
+
+.shop-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 9px;
+    padding: 18px;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    background: white;
+    box-shadow: 0 8px 22px rgb(15 23 42 / 7%);
+}
+
+.shop-item-preview {
+    display: grid;
+    width: 100%;
+    min-height: 82px;
+    place-items: center;
+    border: 3px solid transparent;
+    border-radius: 16px;
+    background: #f1f5f9;
+    font-size: 2rem;
+}
+
+.shop-preview-frame.frame_sky,
+.profile-frame-frame_sky {
+    border-color: #38bdf8;
+}
+
+.shop-preview-frame.frame_sunset,
+.profile-frame-frame_sunset {
+    border-color: #fb923c;
+}
+
+.shop-preview-frame.frame_garden,
+.profile-frame-frame_garden {
+    border-color: #4ade80;
+}
+
+.shop-preview-card.card_ocean,
+.profile-card-card_ocean {
+    background: linear-gradient(135deg, #bae6fd, #818cf8);
+}
+
+.shop-preview-card.card_candy,
+.profile-card-card_candy {
+    background: linear-gradient(135deg, #fbcfe8, #fda4af);
+}
+
+.shop-preview-card.card_galaxy,
+.profile-card-card_galaxy {
+    background: linear-gradient(135deg, #c4b5fd, #312e81);
+    color: white;
+}
+
+.shop-item h3 {
+    margin: 0;
+}
+
+.shop-item p {
+    flex: 1;
+    color: #64748b;
+}
+
+.shop-item-button {
+    width: 100%;
+    padding: 10px 14px;
+    border-radius: 12px;
+    background: #4f46e5;
+    color: white;
+    font-weight: 700;
+}
+
+.shop-item-button:disabled {
+    background: #16a34a;
+    cursor: default;
+}
+
+.achievement-header {
+    flex-wrap: wrap;
+}
+
+#achievementsList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 14px;
+}
+
+.achievement-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 16px;
+    border: 1px solid #e2e8f0;
+    border-radius: 18px;
+    background: white;
+}
+
+.achievement-unlocked {
+    border-color: #facc15;
+    background: #fffbeb;
+}
+
+.achievement-locked {
+    opacity: .8;
+}
+
+.achievement-icon {
+    font-size: 2rem;
+}
+
+.achievement-details {
+    flex: 1;
+}
+
+.achievement-details p {
+    margin: 5px 0 10px;
+    color: #64748b;
+}
+
+.achievement-progress {
+    height: 8px;
+    margin: 10px 0 6px;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #e2e8f0;
+}
+
+.achievement-progress span {
+    display: block;
+    height: 100%;
+    border-radius: inherit;
+    background: #4f46e5;
+}
+
+.achievement-unlocked .achievement-progress span {
+    background: #eab308;
+}
+
+.profile-card-display {
+    position: relative;
+    border: 5px solid transparent;
+    border-radius: 24px;
+    transition: background .2s ease, border-color .2s ease;
+}
+
+.profile-badge-display {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    font-size: 2rem;
+}
+
+.ranking-name {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #1e293b !important;
+}
+
+.ranking-badge {
+    font-size: 1rem !important;
+}
+
+.profile-shop-button {
+    display: block;
+    margin: 0 auto 20px;
+}
+
+@media (max-width: 600px) {
+    .shop-header,
+    .achievement-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+.settings-card {
+
+    background: white;
+
+    padding: 25px;
+
+    margin: 15px 0;
+
+    border-radius: 20px;
+
+    font-size: 18px;
+
+}
+
+
+.high-contrast {
+
+    background: #000 !important;
+
+    color: #fff !important;
+
+}
+
+
+.high-contrast .screen,
+
+.high-contrast .card,
+
+.high-contrast .question-card,
+
+.high-contrast .settings-card {
+
+    background: #000 !important;
+
+    color: #fff !important;
+
+    border: 3px solid #fff;
+
+}
+
+
+.high-contrast button {
+
+    border: 3px solid #fff;
+
+}
